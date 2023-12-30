@@ -5,7 +5,7 @@ function Login() {
     <div className="container-fluid py-5 mt-5 lead">
       <div className="row justify-content-center">
         <div className="col-md-6">
-          <div className="card border-0 shadow rounded-3">
+          <div className="card border-0 shadow rounded-3 py-2">
             <div className="card-body">
               <h1 className="text-center display-5 fw-bold mb-5">
                 Welcome Back!

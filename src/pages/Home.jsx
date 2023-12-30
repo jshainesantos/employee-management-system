@@ -16,7 +16,7 @@ function Home() {
   const [employee, setEmployee] = useState({
     firstname: "",
     lastname: "",
-    grade: "",
+    salary: "",
   });
 
   const [employeeList, setEmployeeList] = useState([]);
@@ -48,7 +48,7 @@ function Home() {
     if (
       employee.firstname === "" ||
       employee.lastname === "" ||
-      employee.grade === ""
+      employee.salary === ""
     ) {
       alert("Field cannot be empty");
     } else {
@@ -56,7 +56,7 @@ function Home() {
       setEmployee({
         firstname: "",
         lastname: "",
-        grade: "",
+        salary: "",
       });
       addDoc(collection(db, "employees"), employee);
     }
@@ -77,14 +77,14 @@ function Home() {
     }
   };
 
-  const updateEmployee = (employeeID, firstname, lastname, grade) => {
+  const updateEmployee = (employeeID, firstname, lastname, salary) => {
     setEditToggle(true);
 
     setEmployee({
       employeeID: employeeID,
       firstname: firstname,
       lastname: lastname,
-      grade: grade,
+      salary: salary,
     });
   };
 
@@ -95,14 +95,14 @@ function Home() {
     updateDoc(employeeRef, {
       firstname: employee.firstname,
       lastname: employee.lastname,
-      grade: employee.grade,
+      salary: employee.salary,
     });
 
     setEditToggle(false);
     setEmployee({
       firstname: "",
       lastname: "",
-      grade: "",
+      salary: "",
     });
   };
 
@@ -110,7 +110,7 @@ function Home() {
     <>
       <div className="container-md mt-5 lead">
         <h1 className="fw-bold text-center display-4 fw-bold mb-3">
-          ‍ Employee Records
+          ‍ Employee Dashboard
         </h1>{" "}
         <p className="text-center lead">A list of employee records.</p>
         <hr />
@@ -148,18 +148,18 @@ function Home() {
             />
           </div>
           <div className="col-md-2">
-            <label htmlFor="grade" className="form-label">
-              Grade:
+            <label htmlFor="salary" className="form-label">
+              Salary:
             </label>
             <input
               type="number"
               className="form-control"
-              id="grade"
-              placeholder="99"
-              aria-label="Grade"
-              value={employee.grade}
+              id="salary"
+              placeholder="99999"
+              aria-label="salary"
+              value={employee.salary}
               onChange={(e) =>
-                setEmployee({ ...employee, grade: e.target.value })
+                setEmployee({ ...employee, salary: e.target.value })
               }
             />
           </div>
@@ -185,6 +185,7 @@ function Home() {
             </div>
           )}
         </form>
+        <h4>EMPLOYEES: </h4>
         <hr />
         {employeeList.map((employeeRecord) => (
           <Employee
@@ -192,7 +193,7 @@ function Home() {
             firstname={employeeRecord.firstname}
             employeeRecord={employeeRecord}
             lastname={employeeRecord.lastname}
-            grade={employeeRecord.grade}
+            salary={employeeRecord.salary}
             deleteEmployee={deleteEmployee}
             updateEmployee={updateEmployee}
             employeeID={employeeRecord.employee_id}

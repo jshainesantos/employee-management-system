@@ -7,7 +7,7 @@ function Employee({
   employeeID,
   firstname,
   lastname,
-  grade,
+  salary,
 }) {
   return (
     <>
@@ -16,8 +16,8 @@ function Employee({
           <div>
             <h6 className="mb-0 card-title">
               {employeeRecord.lastname}, {employeeRecord.firstname}
-              <span className="badge bg-secondary ms-2">
-                {employeeRecord.grade}
+              <span className="badge rounded-pill bg-success text-white ms-2">
+                ₱{employeeRecord.salary}
               </span>
             </h6>
           </div>
@@ -31,7 +31,7 @@ function Employee({
             </button>
             <button
               onClick={() =>
-                updateEmployee(employeeID, firstname, lastname, grade)
+                updateEmployee(employeeID, firstname, lastname, salary)
               }
               type="button"
               className="btn btn-secondary btn-sm"
