@@ -18,22 +18,22 @@ function About() {
         <div className="col-12 col-md-6">
           <h2 className="h5 mb-4">Key Features:</h2>
           <ul className="list-group">
-            <li className="list-group-item pt-3">
+            <li className="list-group-item py-3">
               <i className="bi bi-check-circle text-success me-2 fw-bold">✓</i> Create:
               Users can add new employees by filling in first name, last name,
               and grade fields.
             </li>
-            <li className="list-group-item pt-3">
+            <li className="list-group-item py-3">
               <i className="bi bi-lock text-primary me-2 fw-bold">✓</i> Read: The
               application fetches and displays a list of existing employee
               records from Firebase.
             </li>
-            <li className="list-group-item pt-3">
+            <li className="list-group-item py-3">
               <i className="bi bi-lock text-warning me-2 fw-bold">✓</i> Update: Users can
               edit existing employee records by clicking an <b>Edit</b> button.
             </li>
 
-            <li className="list-group-item pt-3">
+            <li className="list-group-item py-3">
               <i className="bi bi-search text-danger me-2 fw-bold">✓</i> Delete: Users
               can delete employee records using a <b>Delete</b> button.
             </li>
