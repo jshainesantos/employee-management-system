@@ -108,9 +108,11 @@ function Home() {
 
   return (
     <>
-      <div className="container-md mt-5">
-        <h1 className="fw-bold text-center mb-4">‍ Employee Records</h1>{" "}
-        <p className="text-center">A list of employee records.</p>
+      <div className="container-md mt-5 lead">
+        <h1 className="fw-bold text-center display-4 fw-bold mb-3">
+          ‍ Employee Records
+        </h1>{" "}
+        <p className="text-center lead">A list of employee records.</p>
         <hr />
         <form className="row g-3 mb-4">
           <div className="col-md-5">
@@ -165,7 +167,7 @@ function Home() {
             <div className="col-12 col-md-5 col-lg-3 d-grid gap-2">
               <button
                 type="button"
-                className="btn btn-success"
+                className="btn btn-success  mb-5"
                 onClick={handleUpdateEmployee}
               >
                 Update
@@ -183,6 +185,7 @@ function Home() {
             </div>
           )}
         </form>
+        <hr />
         {employeeList.map((employeeRecord) => (
           <Employee
             key={employeeRecord.id}

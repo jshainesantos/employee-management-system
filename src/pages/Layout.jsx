@@ -3,7 +3,7 @@ import { Outlet, Link } from "react-router-dom";
 function Layout() {
   return (
     <>
-      <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
+      <nav className="navbar navbar-expand-lg navbar-dark bg-primary ">
         <div className="container-fluid">
           <Link className="navbar-brand fw-bold" to="/home">
             ༼ つ ◕_◕ ༽つ

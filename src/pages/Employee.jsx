@@ -11,7 +11,7 @@ function Employee({
 }) {
   return (
     <>
-      <div className="card mb-3 shadow-sm ">
+      <div className="card mb-3 shadow-sm">
         <div className="card-body d-flex justify-content-between align-items-center">
           <div>
             <h6 className="mb-0 card-title">

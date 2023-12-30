@@ -40,7 +40,7 @@ function About() {
           </ul>
         </div>
       </div>
-      <div className="row justify-content-center mt-5">
+      <div className="row justify-content-center mt-4">
         <div className="col-12 col-md-6">
           <Link className="btn btn-primary px-4" to="/contact">
             Contact Us
