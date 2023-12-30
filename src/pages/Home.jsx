@@ -185,7 +185,7 @@ function Home() {
             </div>
           )}
         </form>
-        <h4>EMPLOYEES: </h4>
+        <h3>EMPLOYEES</h3>
         <hr />
         {employeeList.map((employeeRecord) => (
           <Employee
