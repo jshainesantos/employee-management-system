@@ -62,11 +62,19 @@ function Home() {
     }
   };
 
-  const deleteEmployee = (employeeID) => {
+  const deleteEmployee = async (employeeID) => {
     const db = getFirestore(firebaseApp);
-    confirm(`Are you sure you want to delete this employee?`).then(
-      deleteDoc(doc(db, "employees", employeeID))
+    const userConfirmed = window.confirm(
+      "Are you sure you want to delete this employee?"
     );
+
+    if (userConfirmed) {
+      try {
+        await deleteDoc(doc(db, "employees", employeeID));
+      } catch (error) {
+        console.error("Error deleting employee:", error);
+      }
+    }
   };
 
   const updateEmployee = (employeeID, firstname, lastname, grade) => {
@@ -102,7 +110,6 @@ function Home() {
     <>
       <div className="container-md mt-5">
         <h1 className="fw-bold text-center mb-4">‍ Employee Records</h1>{" "}
-        {/* Updated heading */}
         <p className="text-center">A list of employee records.</p>
         <hr />
         <form className="row g-3 mb-4">
@@ -146,7 +153,7 @@ function Home() {
               type="number"
               className="form-control"
               id="grade"
-              placeholder="100"
+              placeholder="99"
               aria-label="Grade"
               value={employee.grade}
               onChange={(e) =>
@@ -155,7 +162,7 @@ function Home() {
             />
           </div>
           {editToggle ? (
-            <div className="col-6 col-md-4 col-lg-2 d-grid gap-2">
+            <div className="col-12 col-md-5 col-lg-3 d-grid gap-2">
               <button
                 type="button"
                 className="btn btn-success"
@@ -165,7 +172,7 @@ function Home() {
               </button>
             </div>
           ) : (
-            <div className="col-6 col-md-4 col-lg-2 d-grid gap-2">
+            <div className="col-12 col-md-5 col-lg-3 d-grid gap-2">
               <button
                 type="button"
                 className="btn btn-primary mb-5"
