@@ -4,7 +4,6 @@ This is an Employee Management Dashboard project developed using ReactJS for the
 
 ## Project Overview
 
-- **GitHub Repository**: [Employee Management Dashboard](https://github.com/jshainesantos/project-4)
 - **Deployed Application**: [Employee Management Dashboard](https://employee-dashboard-p4.netlify.app/)
 - **Frontend Framework**: ReactJS
 - **Styling Framework**: Bootstrap
